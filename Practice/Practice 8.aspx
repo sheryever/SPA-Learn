@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>Defining Routes</h1>
-        
+    <a href="#/">View 1</a>   | <a href="#/view2">View 1</a>   
     <div data-ng-view=""></div>
 
     <script>
@@ -35,16 +35,16 @@
 
         var controllers = {};
         controllers.SimpleController = function($scope) {
-            $scope.customers = [{ name: 'Abu Ali', city: 'Madina' }
-                , { name: 'Hamid Khatri', city: 'Makkah' }
-                , { name: 'Abdul Lateef', city: 'Madina' }
-                , { name: 'Qasim', city: 'Hyderabad' }];
+            $scope.customers = [{ Name: 'Abu Ali', City: 'Madina' }
+                , { Name: 'Hamid Khatri', City: 'Makkah' }
+                , { Name: 'Abdul Lateef', City: 'Madina' }
+                , { Name: 'Qasim', City: 'Hyderabad' }];
 
-            $scope.addCustomer = function() {
+            $scope.saveCustomer = function () {
                 $scope.customers.push(
                     {
-                        name: $scope.newCustomer.name,
-                        city: $scope.newCustomer.city
+                        Name: $scope.customer.Name,
+                        City: $scope.customer.City
                     });
             };
         };

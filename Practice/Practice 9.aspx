@@ -19,10 +19,10 @@
         var demoApp = angular.module('demoApp', ['ngRoute', 'ngAnimate'])
             .factory('simpleFactory', function() {
                 var factory = {};
-                var customers = [{ name: 'Abu Ali', city: 'Madina' }
-                , { name: 'Hamid Khatri', city: 'Makkah' }
-                , { name: 'Abdul Lateef', city: 'Madina' }
-                , { name: 'Qasim', city: 'Hyderabad' }];
+                var customers = [{ Name: 'Abu Ali', City: 'Madina' }
+                , { Name: 'Hamid Khatri', City: 'Makkah' }
+                , { Name: 'Abdul Lateef', City: 'Madina' }
+                , { Name: 'Qasim', City: 'Hyderabad' }];
 
                 factory.getCustomers = function() {
                     return customers;
@@ -55,11 +55,11 @@
                 $scope.customers = simpleFactory.getCustomers();
             }
 
-            $scope.addCustomer = function() {
+            $scope.saveCustomer = function() {
                 $scope.customers.push(
                     {
-                        name: $scope.newCustomer.name,
-                        city: $scope.newCustomer.city
+                        Name: $scope.customer.Name,
+                        City: $scope.customer.City
                     });
             };
         };
