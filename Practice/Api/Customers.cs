@@ -32,6 +32,9 @@ namespace Practice.Api
         // POST api/customers
         public HttpResponseMessage Post([FromBody]Customer cust)
         {
+            if (cust.Id > 0)
+                return Put(cust.Id, cust);
+
             var newCust = _entities.Customers.Add(cust);
             _entities.SaveChanges();
             if (newCust != null)
