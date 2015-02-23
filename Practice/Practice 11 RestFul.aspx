@@ -93,6 +93,7 @@
                 return $location.path().substr(0, path.length) == path;
             };
         };
+
         controllers.SimpleController = function ($scope, Customers) {
             $scope.customers = [];
             $scope.status;
